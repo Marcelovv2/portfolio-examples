@@ -1,0 +1,45 @@
+.btn-container{
+    width: 20%;
+    height: 100px;
+}
+.btn {
+    border: 5px solid;
+    position: relative;
+    height: 50px;
+    width: 275px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#svgContainer{
+    position: absolute;
+    left: -156%;
+    top: 33px;
+    z-index: 1;
+    width: 100%;
+}
+svg{
+    fill: lightsalmon;
+    transform: scale(2.5);
+}
+.text-link{
+    z-index: 2;
+    background-color: transparent;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 1.875rem;
+    font-size: 2.14286vw;
+    font-weight: 400;
+
+}
+
+
+.d{
+    left: -42%;
+    top: 17px;
+}
