@@ -18,7 +18,7 @@ function App() {
         image2={orange} 
         image3={slices} 
       /> */}
-      <SpecialButton text={"Follow Along"}/>
+      <SpecialButton text={"Follow Along"} link="/this"/>
     </div>
   );
 }

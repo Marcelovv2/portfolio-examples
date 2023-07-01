@@ -10,29 +10,13 @@ import './SpecialButton.css';
 /// animates on hover
 /// accesibility focus decoration 
 
-export default function SpecialButton({text}) {
-    const container = useRef(null);
+export default function SpecialButton({text, link}) {
     const backgroundFillRef = useRef(null);
-    
-
-    const twitterRef = useRef(null);
     const buttonTween = useRef(null);
-    // useEffect(() => {
-    //   const ctx = gsap.context((self) => {
-    //       backgroundFillRef.current.addEventListener("mouseover", (event) => {
-    //         console.log("mouseover")
-    //           gsap.to(backgroundFillRef.current, 
-    //               {x: 250, duration: 1.5, ease: "power4.inOut"}
-    //           );
-    //       });
-          
-    //   }, container); // <- Scope!
-     
-    //   return () => ctx.revert(); // <- Cleanup!
-    // }, []);
+
     useEffect(() => {
       buttonTween.current = gsap.to(backgroundFillRef.current, {
-        x: 250, duration: 1.5, ease: "power4.inOut",
+        x: 350, y: -20, duration: 0.75, ease: "power4.inOut",
         paused: true
       });
     }, []);
@@ -42,15 +26,20 @@ export default function SpecialButton({text}) {
     const onMouseLeaveHandler = () => {
       buttonTween.current.reverse();
     };
+    const onClickHandler = () => {
+      window.open(link, "_self");
+    };
   return (
-     <div className='btn' ref={container} onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
+     <button className='btn' onClick={onClickHandler} onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
       <span id="svgContainer" ref={backgroundFillRef}>
         <svg viewBox="0 0 301 60">
           <ellipse cx="150.5" cy="30" rx="150.5" ry="30"/>
         </svg>
       </span>
       <span className="text-link">{text}</span>
-     </div>
+     </button>
+
+     
   );
 }
 

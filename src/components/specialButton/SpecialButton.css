@@ -3,6 +3,7 @@
     height: 100px;
 }
 .btn {
+    all: revert;
     border: 5px solid;
     position: relative;
     height: 50px;
@@ -12,11 +13,23 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transform: rotate(0deg);
+    transition: 0.5s ease-out;
 }
-
+.btn:focus{
+    border: 5px dashed blue;
+    transform: rotate(-3deg);
+    transition: 0.5s ease-in;
+    cursor: pointer;        
+}
+.btn:hover{
+    transform: rotate(-3deg);
+    transition: 0.5s ease-in;
+    cursor: pointer;
+}
 #svgContainer{
     position: absolute;
-    left: -156%;
+    left: -175%;
     top: 33px;
     z-index: 1;
     width: 100%;
