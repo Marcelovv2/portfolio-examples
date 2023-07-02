@@ -15,6 +15,7 @@
     overflow: hidden;
     transform: rotate(0deg);
     transition: 0.5s ease-out;
+    box-shadow: 10px 10px;
 }
 .btn:focus{
     border: 5px dashed blue;
@@ -47,12 +48,7 @@ svg{
     display: inline-block;
     font-size: 1.875rem;
     font-size: 2.14286vw;
-    font-weight: 400;
+    font-weight: inherit;
 
 }
 
-
-.d{
-    left: -42%;
-    top: 17px;
-}

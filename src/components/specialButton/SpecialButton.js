@@ -3,14 +3,14 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import './SpecialButton.css';
 
-//TODO:
-/// Receives a string prop for botton content
-/// Receives a string prop for the link
-/// decorated
-/// animates on hover
-/// accesibility focus decoration 
+// Receives a string prop for botton content
+// Receives a string prop for the link
+// Receives a string for a class
+// decorated
+// animates on hover
+// accesibility focus decoration 
 
-export default function SpecialButton({text, link}) {
+export default function SpecialButton({text, link, className}) {
     const backgroundFillRef = useRef(null);
     const buttonTween = useRef(null);
 
@@ -30,7 +30,7 @@ export default function SpecialButton({text, link}) {
       window.open(link, "_self");
     };
   return (
-     <button className='btn' onClick={onClickHandler} onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
+     <button className={"btn" + " " + className} onClick={onClickHandler} onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
       <span id="svgContainer" ref={backgroundFillRef}>
         <svg viewBox="0 0 301 60">
           <ellipse cx="150.5" cy="30" rx="150.5" ry="30"/>
