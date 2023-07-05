@@ -5,6 +5,7 @@ import LogoBanner from './components/logoBanner/LogoBanner';
 import SpecialButton from './components/specialButton/SpecialButton';
 import CallToAction from './components/callToAction/CallToAction';
 import AttentionGrabber from './components/attentionGrabber/AttentionGrabber';
+import ReinforcementContent from './components/reinforcementContent/ReinforcementContent';
 import './App.css';
 import logo from './assets/logo.png';
 import logo2 from './assets/logo.svg';
@@ -17,18 +18,24 @@ const secondaryText = "We issue challenges, you use your basketball skills and k
 function App() {
   return (
     <div className="App">
-      {/* <MovingBanner section1={"#MovingBanner"} section2={logo2}/>
+      <MovingBanner section1={"#MovingBanner"} section2={logo2}/>
       <FallingObjects 
         image1={mango} 
         image2={orange} 
         image3={slices} 
-      /> */}
+      />
+      <CallToAction />
       <AttentionGrabber 
         image1={orange} 
         image2={mango} 
         image3={slices}
         className={"backgroundMarble"}
         text={"Pay Attention!"}
+      />
+      <ReinforcementContent 
+        image1={orange} 
+        image2={mango} 
+        image3={slices}
       />
     </div>
   );
