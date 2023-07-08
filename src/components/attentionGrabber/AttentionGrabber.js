@@ -28,14 +28,12 @@ export default function AttentionGrabber({image1, image2, image3, text, classNam
   return (
     <div className={"attention-grabber-container" + " " + className}  >
         <div id="imagesContainer" ref={container}>
-            <img src={image1} ref={image1Ref} id="flippingImage1"/>
-            <img src={image2} ref={image2Ref} id="flippingImage2"/>
-            <img src={image3} ref={image3Ref} id="flippingImage3"/>
+            <img src={image1} ref={image1Ref} id="flippingImage1" alt=""/>
+            <img src={image2} ref={image2Ref} id="flippingImage2" alt=""/>
+            <img src={image3} ref={image3Ref} id="flippingImage3" alt=""/>
         </div>
         <div id="attentionGrabberTextContainer">{text}</div>
     </div>
-
-     
   );
 }
 

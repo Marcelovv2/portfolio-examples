@@ -1,5 +1,37 @@
-.test{
-  height: 500px;
+@import url("https://use.typekit.net/tan6oeq.css");
+body{
+  overflow-x: hidden ;
+  font-family: maple, sans-serif;
+  background-image: url(./assets/marble.png);
+  font-family: "reross-quadratic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #6D6E71;
+}
+#mainBannerContainer{
+  position: relative;
+  background-image: url(./assets/heroBanner.jpg);
+  background-position: center;
+}
+#middleContainer{
   width: 100%;
-  border: 1px solid magenta;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10% 0 10% 0;
+}
+
+
+@media screen and (min-width: 0) and (max-width: 768px ) { 
+  
+  #middleContainer {
+    width: 100%;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    margin: 10% 0 10% 0;
+    align-items: center;
+  }
+  
 }

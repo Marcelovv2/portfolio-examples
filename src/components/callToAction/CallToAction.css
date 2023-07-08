@@ -7,14 +7,15 @@
     }
 }
 #callToActionContainer{
-    width: 50%;
+    width: 48%;
     min-height: 400px;
-    border: 1px solid;
+    border: 3px solid #B2841D;
     position: relative;
+    border-radius: 1%;
 }
-#backgroundImage{
+#pulseImage{
     position: relative;
-    right: -22%;
+    right: -57%;
     top: 40px;
     width: 35%;
     height: auto;
@@ -50,7 +51,53 @@
 
 .spcBtnCallToAction {
     z-index: 3;
-    left: 10%;
-    top: 130px;
+    left: 52%;
+    top: 20%;
     font-weight: 800;
+    
 }
+
+@media screen and (min-width: 0) and (max-width: 768px ) { 
+  
+    #callToActionContainer{
+        width: 95%;
+        min-height: 400px;
+        border: 3px solid #B2841D;
+        position: relative;
+        border-radius: 1%;
+    }
+
+    #textContainer {
+        width: 76%;
+        height: 80%;
+        position: absolute;
+        top: 7%;
+        left: 6%;
+        z-index: 1;
+      }
+    
+    #mainText {
+        font-size: 1.75rem;
+        font-weight: 800;
+    }
+
+    .spcBtnCallToAction {
+        z-index: 3;
+        left: 9%;
+        top: 80%;
+        font-weight: 800;
+        font-size: 1.5em !important;
+        width: 80% !important;
+        position: absolute !important;
+    }
+    #pulseImage {
+        position: relative;
+        right: -63%;
+        top: 90px;
+        width: 35%;
+        height: auto;
+        animation: pulse 1s ease infinite alternate;
+        z-index: 0;
+    }
+}
+

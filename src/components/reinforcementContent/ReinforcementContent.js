@@ -16,7 +16,6 @@ export default function ReinforcementContent({image1, image2, image3, className}
     const card1Ref = useRef(null);
     const card2Ref = useRef(null);
     const card3Ref = useRef(null);
-    const testRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context((self) => {
@@ -27,7 +26,7 @@ export default function ReinforcementContent({image1, image2, image3, className}
             scrollTrigger: {
                 trigger: container.current,
                 endTrigger: container.current,
-                markers: true
+                markers: false
             }
         });
         tl.fromTo(card1Ref.current,{opacity: 0, rotation: 3}, {rotation: 0, opacity: 1, duration: 0.5, ease: "power2.out", delay: 0.5});
@@ -44,17 +43,17 @@ export default function ReinforcementContent({image1, image2, image3, className}
     <h1 className="reinforcement-tittle">Sint elit veniam Lorem.</h1>
     <div className={"reinforcement-cards-container" + " " + className} ref={container} >
         <div id="reinforceCard1" className="card"  ref={card1Ref}>
-            <img src={image1}/>
+            <img alt="" src={image1}/>
             <h3 className="card-header">Title</h3>
             <span className="card-text">Lorem ipsum addendum tuborren, alcairt salem neail.</span>
         </div>
         <div id="reinforceCard2" className="card" ref={card2Ref}>
-            <img src={image2}/>
+            <img alt="" src={image2}/>
             <h3 className="card-header">Title</h3>
             <span className="card-text">Lorem ipsum addendum tuborren, alcairt salem neail.</span>
         </div>
         <div id="reinforceCard3" className="card" ref={card3Ref}>
-            <img src={image3}/>
+            <img alt="" src={image3}/>
             <h3 className="card-header">Title</h3>
             <span className="card-text">Lorem ipsum addendum tuborren, alcairt salem neail.</span>
         </div>

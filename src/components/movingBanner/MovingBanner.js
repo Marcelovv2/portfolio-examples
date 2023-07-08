@@ -10,7 +10,6 @@ import './MovingBanner.css';
 
 export default function MovingBanner({section1, section2}) {
     const container = useRef();
-    const tl = useRef();
     //Check if props are images or strings and creates multiple nodes to cover the banner
     function SectionList() {
         const numbOfWords = [];
@@ -30,42 +29,43 @@ export default function MovingBanner({section1, section2}) {
         }
         const bannerWords = numbOfWords.map(numb => {
             let section;
-            if(numb % 2 == 0){
-                (section1Type == "image") ?
+            if(numb % 2 === 0){
+                section1Type === "image" ?
                     section = 
-                    <div className="box">
-                        <img className="banner-img" src={section1} />
+                    <div className="box" key={String(numb)}>
+                        <img alt="" className="banner-img" src={section1} />
                     </div>
                 :
                     section = 
-                    <div className="box">
+                    <div className="box" key={String(numb)}>
                         <div>{section1}</div>
                     </div>
                 }
             else{
-                (section2Type == "image") ?
+                section2Type === "image" ?
                     section = 
-                    <div className="box">
-                        <img className="banner-img" src={section2} />
+                    <div className="box" key={String(numb)}>
+                        <img alt="" className="banner-img" src={section2} />
                     </div>
                 :
                     section = 
-                    <div className="box">
+                    <div className="box" key={String(numb)}>
                         <div>{section2}</div>
                     </div>              
             }
+
+            return section;
             
-            return(
-                section
-            ) 
-        })
+        });
         
         return (
           <React.Fragment>
             {bannerWords}
           </React.Fragment>
-        );
+        )
     }
+    const banner = SectionList();
+
     useEffect(() => {
         const ctx = gsap.context((self) => {
         const boxes = gsap.utils.toArray(".box");
@@ -76,11 +76,9 @@ export default function MovingBanner({section1, section2}) {
     }, []);
 
   return (
-    <main>
-      <div className="banner-container" ref={container}>
-        {<SectionList />}
+      <div id="bannerContainer" className="banner-container" ref={container}>
+        {banner}
       </div>
-    </main>
   );
 }
 

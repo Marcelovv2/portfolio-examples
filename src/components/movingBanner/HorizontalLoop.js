@@ -51,7 +51,7 @@ function horizontalLoop(items, config) {
         (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
         let newIndex = gsap.utils.wrap(0, length, index),
             time = times[newIndex];
-        if (time > tl.time() !== index > curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
+        if ((time > tl.time()) !== (index > curIndex)) { // if we're wrapping the timeline's playhead, make the proper adjustments
             vars.modifiers = {time: gsap.utils.wrap(0, tl.duration())};
             time += tl.duration() * (index > curIndex ? 1 : -1);
         }
